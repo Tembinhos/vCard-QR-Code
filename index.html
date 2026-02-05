@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact QR Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app">
+      <h1>Contact QR Generator</h1>
+      <p class="subtitle">Create and share vCard QR codes instantly</p>
+
+      <section class="card">
+        <form id="contactForm" class="form-grid">
+          <label>
+            Full name
+            <input id="name" type="text" placeholder="John Doe" required />
+          </label>
+
+          <label>
+            Phone number
+            <input id="phone" type="tel" placeholder="+1 123 456 7890" required />
+          </label>
+
+          <label>
+            Organization
+            <input id="organization" type="text" placeholder="Company" />
+          </label>
+
+          <label>
+            Title
+            <input id="title" type="text" placeholder="Job title" />
+          </label>
+
+          <button type="submit" class="primary">Generate QR Code</button>
+        </form>
+
+        <div class="result" id="result" hidden>
+          <h2>Your vCard QR (SVG)</h2>
+          <div id="qrOutput" class="qr-output" aria-live="polite"></div>
+          <div class="actions">
+            <button id="downloadBtn" type="button">Download SVG</button>
+            <button id="shareBtn" type="button">Share SVG</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
